@@ -1,0 +1,103 @@
+A Pull Request (PR) in GitHub is a way to propose changes from one branch to another (typically from a feature branch to the main or master branch). Here's a step-by-step guide on how to create a pull request using GitHub.
+
+## Example Scenario:
+You have a repository on GitHub called my-repo.
+
+You created a new branch called feature-branch where you made some changes.
+
+You now want to create a pull request to merge feature-branch into the main branch.
+
+1. Create a New Branch (Locally)
+First, make sure you're on the correct branch (the one you want to base your changes on). For example, the main branch.
+
+
+git checkout main
+git pull origin main  # Ensure you have the latest changes
+Now, create a new branch for your feature.
+
+
+git checkout -b feature-branch
+2. Make Your Changes
+Make the changes to your files in the feature-branch. You can add new features, bug fixes, or changes as needed.
+
+For example, let's edit README.md:
+
+
+echo "Added a new feature" >> README.md
+3. Commit Your Changes
+Once you've made your changes, add and commit them to your branch.
+
+
+git add README.md  # Add the file to staging
+git commit -m "Add new feature to README"  # Commit your changes
+4. Push Your Branch to GitHub
+Push your changes to the remote repository on GitHub.
+
+
+git push origin feature-branch
+5. Create a Pull Request (PR) on GitHub
+Now that your changes are pushed to the feature-branch, you can create a pull request on GitHub.
+
+Go to GitHub: Open your browser and go to your GitHub repository (e.g., https://github.com/your-username/my-repo).
+
+Create the Pull Request:
+
+You'll see a banner at the top of the repository page that suggests creating a pull request for the branch you've just pushed. Click the "Compare & pull request" button.
+
+If you don’t see the banner, click on the "Pull requests" tab at the top, and then click the "New pull request" button.
+
+Select feature-branch as the source branch (the branch you want to merge), and main as the target branch (the branch you want to merge into).
+
+Add a Title and Description:
+
+Add a title for your pull request (e.g., "Add new feature to README").
+
+In the description section, explain what changes you’ve made, why you made them, and any other relevant information.
+
+Example description:
+
+css
+Copy
+This PR adds a new feature to the README, providing a better understanding of how to use the project.
+Create the Pull Request: After reviewing the changes, click the "Create pull request" button.
+
+6. Review and Merge the Pull Request
+Once the pull request is created, the repository owners or collaborators will review your changes. They may comment, request changes, or approve it.
+
+Reviewers can comment on specific lines in the code by clicking the "Files changed" tab and leaving comments.
+
+Address feedback: If changes are requested, you can make the changes locally and push them to the same branch. The pull request will automatically update.
+
+Once the pull request is approved, the reviewer (or you) can merge it.
+
+To merge:
+
+Go to the pull request on GitHub.
+
+Click "Merge pull request".
+
+Confirm the merge.
+
+7. Delete the Feature Branch (Optional)
+After the pull request is merged, you can safely delete your feature-branch:
+
+Locally:
+
+
+git branch -d feature-branch  # Delete the local branch
+On GitHub: GitHub will offer a button to delete the branch after the PR is merged. You can also delete it manually from the repository's branches tab.
+
+Summary of the Process:
+Create a new branch from main (or your base branch).
+
+Make changes and commit them to the new branch.
+
+Push the branch to GitHub.
+
+Open a pull request on GitHub to merge your changes.
+
+Review and discuss the pull request.
+
+Merge the pull request into the base branch.
+
+Optionally, delete the feature branch.
