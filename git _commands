@@ -1,0 +1,89 @@
+# GIT Basic Commands
+1. git init
+Initializes an empty Git repository in the current directory.
+
+2. git config --global --list
+Lists your global Git configuration, including the username and email address used for commits.
+
+3. git config --global user.name "username"
+Adds your Git commit username globally.
+
+4. git config --global user.email "youremail@example.com"
+Adds your Git commit email globally.
+
+5. git clone <remote URL>
+Downloads a remote repository from GitHub (or another Git host) to your local machine.
+
+6. Fork
+A fork is a copy of a repository. When you fork a repository, it will not impact the original (upstream) repository. If changes are made to the original repository, you will need to manually sync your fork to get those updates.
+
+7. SSH Connection to GitHub
+To connect to GitHub using SSH (instead of HTTPS), use this command:
+
+bash
+Copy
+ssh -T git@github.com
+8. git remote add origin <URL>
+Connects your local repository to a remote GitHub repository by adding the remote URL.
+
+9. git remote set-url origin <new URL>
+Updates the remote URL if you want to change the remote repository’s URL.
+
+10. git pull
+Pulls the latest changes from the remote repository (GitHub) to your local repository.
+
+11. git push
+Pushes your local changes to the remote repository on GitHub.
+
+12. git status
+Displays the status of your local files (which files are staged, unstaged, or untracked).
+
+13. git add <file name> / git add .
+Adds files to the staging area in preparation for committing. Use git add . to add all modified files.
+
+14. git commit -m "commit message"
+Commits the staged changes to your local repository with a descriptive commit message.
+
+15. git log
+Displays the commit history in your current branch.
+
+16. git log --oneline
+Displays a condensed, one-line version of the commit history.
+
+17. git diff
+Shows the differences between the working directory and the index (staging area) or between commits.
+
+18. git reset --hard <commit-id>
+Resets your repository to a specific commit. This will discard all changes after the given commit and reset the HEAD pointer to that commit.
+
+19. git branch
+Lists all available branches in the repository.
+
+20. git checkout -b <branch name>
+Creates a new branch and switches to it.
+
+21. git checkout <branch name>
+Switches to the specified branch.
+
+22. Merging Branches
+To merge a branch into master (or the main branch), follow these steps:
+
+Ensure you're on the master branch.
+
+Run git pull origin master to ensure your local master is up to date.
+
+Merge the feature branch into master:
+
+bash
+Copy
+git merge <feature-branch>
+23. Cherry-pick a Commit
+When you want to apply a specific commit from one branch to another (usually from feature-branch to master), use git cherry-pick <commit-id>. This applies the changes from the given commit ID to your current branch.
+
+Example:
+
+bash
+Copy
+git cherry-pick <commit-id>
+Notes:
+Merge vs Cherry-pick: When merging, you merge a whole branch into another, while git cherry-pick allows you to select a single commit from any branch and apply it to the current branch.
