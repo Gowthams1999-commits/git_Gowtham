@@ -31,6 +31,7 @@ Git:
 28. Pls explain one issues you are facing in git?
 29. What is difference between git reset and git revert command? (HCL asked)
 30. What is difference between git reset --hard and git reset --soft? (HCL asked)
+31. What type of branch startegy you are using in your organization ? (HCL asked)
 
  
 
@@ -69,6 +70,10 @@ Jenkins:
 23. Why are we using docker agent as slave in Jenkins?
 24. How to setup highly available and scalable Jenkins in AWS?
 25. what is multi stage and multi agent Jenkins file?
+26. What is parlell build? (HCL asked)
+27. How to set parameterized build? (HCL asked)
+28. What is difference between snippet generator or decalartive generator? (HCL asked)
+29. what is meaning of (H 5 * * *) in jenkins? (HCL asked)
 
 
 ==================================================
@@ -631,6 +636,9 @@ Build, test, and push images
 
 Deploy containers using orchestration tools (K8s, ECS, Swarm)
 
+31. My application  run on port 5000, please wire docker file for it ? (HCL aksed)
+32. How to upgrade docker agent ? (HCL asked)
+ 
 
 
 
