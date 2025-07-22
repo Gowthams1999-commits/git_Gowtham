@@ -1,0 +1,644 @@
+Git:
+
+ 
+
+1. What is difference between git/GitHub
+2. what is Git init
+3. how to create git branch?
+4. which git branch strategy you are using?
+5. what is  Working area and stagging area in git?
+6. How to check git logs?
+7. How to ignore file / folders while do commit?
+8. How to do reset your previous commit?
+9. How to add remote repo?
+10. hot to verify remote repo added or not?
+11.  what is git clone?
+12. what is git fork?
+14. How to merge branches?
+15. How to resolve conflict issues while merging?
+16. how to switch from one branch to another branch?
+17. what is git push?
+18. what is git pull?
+19. what is git cherry-pick?
+20. what is bran merge?
+21. How to create a pull request and add with your master branch
+22. What is hotfix/Bugfix branches
+23. What types of Branches you are using.
+24. What is git stash? (HCL asked)
+25. How to added user name and commit mail id in git?
+26. What is webhook in git.
+27. How to configure Webhook to trigger CI/CD pipeline?
+28. Pls explain one issues you are facing in git?
+29. What is difference between git reset and git revert command? (HCL asked)
+30. What is difference between git reset --hard and git reset --soft? (HCL asked)
+
+ 
+
+ 
+
+=================================================================
+
+ 
+
+Jenkins:
+
+ 
+
+1.pls explain CI/CD that you are implemented your organization?
+2. Pls explain about CI part?
+3. Pls explain about CD part?
+4. What is Argocd CD , why we are using Argocd CD?
+5. How to find Jenkins initialadmin password?
+6. How to install latest/available plugin?
+7. Please tell few plugin name that you are using?
+8. How to store secrets in Jenkins?
+9. How to create a users/groups in Jenkins?
+10. What is security section in Jenkins?
+11. How to assign permission to users to access Jenkins servers?
+12. How to assign Role based permission to users?
+13. How to trigger job/pipeline in Jenkins?
+14. Pls tell type of build method?
+15. what is poll SCM build?
+16. What is Build Periodically?
+17. what Build other projects build trigger?
+18. How to fetch Jenkins file from SCM/githu?
+19. Pls write one Jenkins file that you have write in your organisation.
+20. How to take backup of Jenkins ?
+21. What is shared library in Jenkins?
+22. How to add Jenkins slave nodes in Jenkins ?
+23. Why are we using docker agent as slave in Jenkins?
+24. How to setup highly available and scalable Jenkins in AWS?
+25. what is multi stage and multi agent Jenkins file?
+
+
+==================================================
+
+1. Error Handling:
+
+You have a playbook that sometimes fails on a specific task. How would you make Ansible skip the failed task and continue with the rest of the play?
+
+2. Parallel Execution:
+
+You need to restart a service on 100 servers but not all at once. How can you limit parallel execution using Ansible?
+
+3. Secrets Management:
+
+Your playbook uses sensitive data like database passwords. How do you securely manage and reference these secrets in Ansible?
+
+4. Custom Module Use Case:
+
+You need to perform a task that Ansible has no built-in module for. What are your options? Walk through how you'd implement a custom module or workaround.
+
+5. Dynamic Inventory:
+
+Your infrastructure is hosted in AWS and keeps changing. How would you use a dynamic inventory in Ansible to manage EC2 instances?
+
+======================================================================================================================
+
+🧪 Real-Life Troubleshooting Scenarios
+SSH Authentication Failure:
+
+1. Ansible fails to connect to a host with an SSH error. How would you debug and resolve it?
+
+ Handlers Not Triggering:
+
+2. You have a task that changes a config file and a handler to restart the service. But the handler is not being triggered. Why might this happen?
+
+Playbook Runs But Doesn't Apply Changes:
+
+3. Your playbook completes successfully, but the expected changes aren't showing up on the target servers. How would you troubleshoot?
+
+Ansible Tower / AWX Issue:
+
+4. A job in Ansible Tower fails but the same playbook runs fine using the CLI. What steps would you take to debug the issue?
+
+Performance Optimization:
+
+5. Your playbook takes too long to run. What strategies would you apply to improve its execution time?
+
+
+=============================================================================================
+
+Terraform.
+
+✅ Terraform Interview Questions & Answers for DevOps Engineers
+🔹 Basic Level
+1. What is Terraform and how does it work?
+Terraform is an open-source Infrastructure as Code (IaC) tool by HashiCorp that lets you define and provision infrastructure using a declarative configuration language (HCL). It uses providers to interact with cloud platforms like AWS, Azure, etc.
+
+2. What are the key components of Terraform?
+
+Providers: Plugin to interact with APIs (e.g., AWS)
+
+Resources: Real infrastructure objects
+
+Modules: Group of resources reused across configurations
+
+Variables: Dynamic input values
+
+Outputs: Return values after deployment
+
+State: Keeps track of current infrastructure
+
+3. What is a Terraform provider?
+A provider is responsible for managing the lifecycle of a resource—like AWS, Azure, GCP, Kubernetes, etc.
+
+4. What is the purpose of the .tfstate file?
+It stores the current state of infrastructure. Terraform uses it to determine what changes need to be applied.
+
+5. How do you initialize a Terraform project?
+Run terraform init in the working directory. This sets up the backend and installs the providers.
+
+6. Difference between terraform plan and terraform apply?
+
+plan: Shows what will be changed.
+
+apply: Applies the changes.
+
+7. What does terraform destroy do?
+It deletes all the resources managed by your configuration.
+
+8. How do you define and use variables in Terraform?
+
+
+variable "region" {
+  type        = string
+  description = "AWS region"
+}
+Use with var.region.
+
+9. How do you pass variables to Terraform?
+
+terraform.tfvars
+
+CLI: -var="region=us-east-1"
+
+Env vars: TF_VAR_region
+
+🔹 Intermediate Level
+10. What is terraform validate and terraform fmt?
+
+validate: Validates syntax and logic.
+
+fmt: Formats code according to standard style.
+
+11. Local vs Remote state?
+
+Local: Stored on disk (default)
+
+Remote: Stored in backend like S3 with optional locking via DynamoDB.
+
+12. How do you manage state in a team? Use a remote backend (e.g., S3) with locking (e.g., DynamoDB) to avoid conflicts.
+
+13. What are Terraform modules? Reusable, shareable configuration units. They help in code reuse and organization.
+
+14. What is terraform taint? Marks a resource for destruction and recreation during the next apply.
+
+15. What are data sources in Terraform? Used to fetch data from outside Terraform.
+Example:
+
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["099720109477"]
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/*"]
+  }
+}
+16. Best practices for Terraform code?
+
+Use modules
+
+Keep state remotely
+
+Use workspaces or folders for environments
+
+Enable version locking
+
+Use CI/CD pipelines
+
+17. How do you manage secrets in Terraform? Avoid hardcoding. Use:
+
+AWS Secrets Manager / SSM
+
+HashiCorp Vault
+
+Environment variables
+
+Encrypted .tfvars
+
+18. Explain Terraform lifecycle rules.
+
+create_before_destroy: Prevents downtime
+
+prevent_destroy: Safeguards from accidental deletes
+
+19. How are resource dependencies handled? Implicit via variable references.
+Explicit via depends_on.
+
+🔹 Advanced Level
+20. How do you manage versioning?
+
+Use Git branches/tags
+
+Use versioned modules
+
+Pin provider versions
+
+21. How do you handle multi-environment setups? Options:
+
+Workspaces
+
+Directory-based layout (e.g., envs/dev, envs/prod)
+
+Use CI/CD with environment-based variables
+
+22. How would you roll back a bad Terraform change? Options:
+
+Revert to a previous Git commit + re-apply
+
+Restore from backup .tfstate
+
+Use versioned remote state
+
+23. Difference between environments and workspaces?
+
+Workspaces: Isolated states under same code
+
+Environments: Typically separate directories with unique configs
+
+24. What is drift? When the actual infrastructure changes outside of Terraform.
+Detect using terraform plan.
+
+25. Have you written custom modules or providers? Yes. Modules are reusable blocks of configuration.
+Custom providers are written in Go using HashiCorp’s SDK (advanced use case).
+
+26. How do you ensure idempotency? Terraform is inherently idempotent—it only applies changes if there’s a difference between desired and current state.
+
+27. Difference between count and for_each?
+
+count: Works with integers
+
+for_each: Works with maps or sets (more flexible)
+
+28. How do you resolve circular dependencies?
+
+Use depends_on
+
+Refactor resources or use null_resource with triggers as a workaround
+
+29. How do you use Terraform in CI/CD?
+
+Run terraform plan on pull request
+
+Run terraform apply on merge
+
+Use tools like GitHub Actions, GitLab CI, Jenkins
+
+30. How do you test Terraform code?
+
+terraform validate
+
+Use static analysis (e.g., tfsec, checkov)
+
+Write tests using Terratest in Go
+
+1. What is terraform?
+2. What is differenece between terraform and ansible?
+3. What is terraform.tfstate file?
+4. What is terraform init?
+5. What is terraform formate?
+6. What is terraform validate?
+7. What is terraform plan?
+8. Terraform apply?
+9. what is terraform.tfvars?
+10. What is modules in terraform?
+11. Pls create / Write one terraform onfiguration file for create a Ec2 instance.
+12. pls create / write one terraform configuration file for create a Ec2 instance using modules?
+13. What is terraform remote backend?
+14. How to enable state lock for your terraform.tf state file?
+15. pls create terraform remote backend ?
+16. what is terraform workspace?
+17. How to create terraform in multiple environment?
+18. My terraform.tfstate file not overiden if i create resources in multiple environment.
+19. Have you integrated Terraform in a CI/CD pipeline? How?
+
+=====================
+
+Docker:
+
+🐳 Docker Interview Questions & Concepts
+1. What is Docker?
+Docker is an open-source platform that enables developers to build, ship, and run applications inside containers. Containers are lightweight, portable, and ensure consistency across different environments.
+
+2. What is the difference between Docker and virtualization?
+Docker uses containerization, sharing the host OS kernel.
+
+Virtualization uses hypervisors to emulate hardware and run full OS instances.
+
+Docker is more lightweight and efficient compared to traditional virtual machines.
+
+3. What is a Hypervisor?
+A hypervisor is software that creates and manages virtual machines (VMs) by abstracting the hardware from the operating systems.
+
+4. What are Docker push and pull?
+docker **push**: Uploads an image to a Docker registry (like Docker Hub).
+
+docker **pull**: Downloads an image from a registry.
+
+5. What is Docker Hub?
+Docker Hub is a cloud-based registry service where you can find, store, and share Docker images.
+
+6. What are Docker images?
+A Docker image is a read-only template used to create containers. It contains the application code, dependencies, and environment setup.
+
+7. What is a Dockerfile?
+A Dockerfile is a script with a set of instructions to build a Docker image.
+
+8. Simple Dockerfile Example to Build an Image:
+
+FROM ubuntu
+RUN apt update && apt install -y nginx
+CMD ["nginx", "-g", "daemon off;"]
+9. What is FROM in a Dockerfile?
+FROM defines the base image for your Docker image. Every Dockerfile must start with a FROM instruction.
+
+10. What is the difference between RUN, CMD, and ENTRYPOINT?
+RUN: Executes commands while building the image.
+
+CMD: Provides default command for the container.
+
+ENTRYPOINT: Sets the main executable for the container.
+
+11. What is the difference between COPY and ADD in Docker?
+COPY: Copies files/folders from the host into the container.
+
+ADD: Same as COPY, but also supports remote URLs and file extraction (e.g., .tar files).
+
+12. How to expose a port in a Dockerfile?
+
+EXPOSE 80
+13. How to run a Docker container?
+
+docker run -d -p 8080:80 myimage
+14. How to isolate a container from the host system and other containers?
+Use Docker networks, resource limits (--memory, --cpus), and namespaces.
+
+15. What is a bridge network in Docker?
+A bridge network is the default network created by Docker. Containers on the same bridge can communicate with each other.
+
+16. What is an overlay network?
+An overlay network allows containers across different Docker hosts to communicate, typically used in Docker Swarm or Kubernetes.
+
+17. How to create a custom network and attach it to a container?
+
+docker network create mynet
+docker run --network=mynet myimage
+18. What is a host network in Docker?
+In host networking, the container shares the host’s network stack, bypassing network isolation.
+
+19. How to attach a network to an existing container?
+
+docker network connect mynet container_id
+20. How to list running and stopped containers?
+
+docker ps        # Running containers  
+docker ps -a     # All containers
+21. How to remove unused containers, volumes, cache, and dangling images?
+
+docker system prune -a
+22. How to store persistent data in a container?
+Use volumes or bind mounts.
+
+Example:
+
+
+docker run -v myvolume:/app/data myimage
+23. Difference between volume and bind mount?
+Volume: Managed by Docker, stored in Docker's directory.
+
+Bind mount: Maps a specific host directory to the container.
+
+24. Difference between docker run and docker exec?
+docker run: Starts a new container.
+
+docker exec: Runs a command inside an already running container.
+
+25. How to build a Docker image?
+
+docker build -t myapp .
+26. How to list Docker volumes?
+
+docker volume ls
+27. What is the Docker area?
+This might refer to Docker storage or working area, i.e., images, containers, volumes, and the /var/lib/docker directory on Linux.
+
+28. What is a multi-stage build in Docker?
+A technique to reduce image size by using multiple FROM statements in a Dockerfile.
+
+Example:
+
+
+FROM golang:1.17 as builder
+WORKDIR /app
+COPY . .
+RUN go build -o main .
+
+FROM alpine
+COPY --from=builder /app/main /main
+ENTRYPOINT ["/main"]
+
+✅ Docker Interview Questions & Answers for DevOps Engineers
+🔹 Basic Level
+1. What is Docker?
+Docker is an open-source platform that enables you to automate the deployment, scaling, and management of applications inside lightweight, portable containers.
+
+2. What is the difference between a container and a virtual machine (VM)?
+
+
+Container	Virtual Machine
+Shares host OS kernel	Has its own OS
+Lightweight	Heavier, more resource-intensive
+Faster startup	Slower boot time
+3. What is a Docker image?
+A Docker image is a read-only template that contains the application code, libraries, and dependencies needed to run a container.
+
+4. What is a Docker container?
+A container is a runtime instance of a Docker image. It is isolated, lightweight, and runs on the host system using the same kernel.
+
+5. What is the purpose of Dockerfile?
+A Dockerfile is a text file with a set of instructions to build a Docker image automatically.
+
+Example:
+
+dockerfile
+Copy
+Edit
+FROM ubuntu
+RUN apt update && apt install -y nginx
+CMD ["nginx", "-g", "daemon off;"]
+6. How do you build and run a Docker container?
+
+
+docker build -t myapp .
+docker run -d -p 80:80 myapp
+7. What is the difference between CMD and ENTRYPOINT in a Dockerfile?
+
+CMD: Default command if no other command is passed.
+
+ENTRYPOINT: Always runs, even if arguments are provided at runtime.
+
+8. How do you list running containers?
+
+
+docker ps
+9. What’s the difference between docker stop and docker kill?
+
+stop: Gracefully stops a container.
+
+kill: Immediately terminates the container.
+
+10. What are volumes in Docker? Volumes are used to persist data generated by and used by Docker containers. They exist outside the container lifecycle.
+
+🔹 Intermediate Level
+11. How do you persist data in Docker? Using volumes or bind mounts:
+
+
+docker run -v myvolume:/app/data myapp
+12. What is Docker Compose?
+A tool for defining and running multi-container Docker applications using a docker-compose.yml file.
+
+Example:
+
+
+version: "3"
+services:
+  web:
+    image: nginx
+    ports:
+      - "80:80"
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+13. What is the difference between a bind mount and a volume?
+
+Bind mount: Maps a host path into the container.
+
+Volume: Managed by Docker; better for data persistence.
+
+14. How do you scale services in Docker Compose?
+
+
+docker-compose up --scale web=3
+15. What is the role of the Docker Registry? A Docker registry stores Docker images. Docker Hub is the default public registry. You can also run your own private registry.
+
+16. How do you remove all stopped containers and unused images?
+
+
+docker system prune
+17. What is the .dockerignore file? It excludes files/directories from being added to the Docker image, similar to .gitignore.
+
+18. How do you check container logs?
+
+
+docker logs <container_id>
+19. How can you connect containers across different networks? Use Docker network commands:
+
+
+docker network create mynet
+docker run --network=mynet ...
+20. What are some Dockerfile best practices?
+
+Use minimal base images (e.g., alpine)
+
+Combine commands in a single RUN to reduce layers
+
+Use .dockerignore
+
+Pin image versions (FROM node:16-alpine)
+
+🔹 Advanced Level
+21. How does Docker achieve isolation? Docker uses Linux namespaces (PID, NET, MNT, UTS) and cgroups for resource control and isolation.
+
+22. What is multi-stage build in Docker? It helps reduce image size by compiling in one stage and copying only required artifacts into the final image.
+
+Example:
+
+
+FROM golang:1.17 AS builder
+WORKDIR /app
+COPY . .
+RUN go build -o main .
+
+FROM alpine
+COPY --from=builder /app/main /main
+ENTRYPOINT ["/main"]
+23. What is the difference between Swarm and Kubernetes?
+
+
+Feature	Swarm	Kubernetes
+Simplicity	Easier setup	More complex
+Features	Basic orchestration	Advanced orchestration
+Ecosystem	Limited	Rich ecosystem
+Adoption	Low	High
+24. How do you troubleshoot a Docker container not starting?
+
+Check docker logs
+
+Inspect with docker inspect <container>
+
+Verify image, volume, and network config
+
+25. How do you secure Docker containers?
+
+Use minimal base images
+
+Run containers as non-root user
+
+Set resource limits
+
+Use signed images
+
+Use tools like docker scan, Trivy, or Clair
+
+26. How do you limit container resources?
+
+
+docker run --memory="512m" --cpus="1.0" myapp
+27. How do you patch/update containers?
+
+Rebuild the image with updated base or app
+
+Pull the latest version of base images
+
+Redeploy the container
+
+28. What’s the difference between docker exec and docker run?
+
+docker exec: Run a command inside an existing container.
+
+docker run: Create a new container from an image and run a command.
+
+29. How do you share data between containers? Use a shared volume or network.
+
+30. How would you integrate Docker with CI/CD?
+
+Use Docker in pipelines (GitHub Actions, Jenkins, GitLab CI)
+
+Build, test, and push images
+
+Deploy containers using orchestration tools (K8s, ECS, Swarm)
+
+
+
+
+
+
+
+
+
+
+
+ 
