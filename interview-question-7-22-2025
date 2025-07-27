@@ -33,6 +33,7 @@ Git:
 30. What is difference between git reset --hard and git reset --soft? (HCL asked)
 31. What type of branch startegy you are using in your organization ? (HCL asked)
 
+
  
 
  
@@ -74,6 +75,7 @@ Jenkins:
 27. How to set parameterized build? (HCL asked)
 28. What is difference between snippet generator or decalartive generator? (HCL asked)
 29. what is meaning of (H 5 * * *) in jenkins? (HCL asked)
+30. I had several failed pipeline jobs. After the developer updated the source code, the pipeline ran successfully. If I re-run one of the old failed jobs, will it pull the latest source code or use the old code from the original run? (one software asked)
 
 
 ==================================================
@@ -328,6 +330,7 @@ Write tests using Terratest in Go
 17. How to create terraform in multiple environment?
 18. My terraform.tfstate file not overiden if i create resources in multiple environment.
 19. Have you integrated Terraform in a CI/CD pipeline? How?
+20. I have created 10 Ec2 instance using terraform, i want to delete 3 of them how to perform it? (one software asked)
 
 =====================
 
@@ -638,6 +641,47 @@ Deploy containers using orchestration tools (K8s, ECS, Swarm)
 
 31. My application  run on port 5000, please wire docker file for it ? (HCL aksed)
 32. How to upgrade docker agent ? (HCL asked)
+
+
+
+
+Kubernetes:
+===========
+
+1. How to upgrade kubernetes cluster (one software asked)
+2. How to create a kubernetes cluster (one oftware asked)
+
+
+AWS:
+====
+
+1.How do you set up a VPC in AWS?
+
+2.How do you assign internet access to an EC2 instance?
+
+3.What is a NAT Gateway in AWS?
+
+4.Why should we choose EKS over ECS, even though ECS supports Fargate? (Capgemini asked this)
+
+5.How do you set up an AWS Lambda function? (Asked by a software company)
+
+6.How do you create and configure an EKS cluster? (Asked by a software company)
+
+7.If the .pem key for an EC2 instance is lost, can it be restored? What are the alternatives? (Asked by a software company)
+
+8.What are Lambda Layers in AWS? How are they used?
+
+Shell :
+=====
+
+1. Write a shell scripting for print my name . (One Software)
+2. Write a shell scripting for print all arguments that i will pass while run shell scripting? (Onesoftware)
+3. Let say name.txt file contain key and value, pls write shell script for print only value? ( HCL)
+
+Sonarqube:
+=========
+
+1. explain what kind of issue sonarqube will identify ?
  
 
 
