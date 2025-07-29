@@ -650,6 +650,10 @@ Kubernetes:
 
 1. How to upgrade kubernetes cluster (one software asked)
 2. How to create a kubernetes cluster (one oftware asked)
+3. How to ensure Zero down time while deploy your application? (1 PS software)
+4. What kind of deployment strategy you are using ? (HCL)
+5. Kubernetes archistructure explain?
+
 
 
 AWS:
